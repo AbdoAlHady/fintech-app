@@ -39,8 +39,7 @@ class AppTextStyles {
     double? height,
     double? letterSpacing,
   }) {
-    return TextStyle(
-      fontFamily: GoogleFonts.lato().fontFamily,
+    return GoogleFonts.lato(
       fontSize: fontSize,
       fontWeight: fontWeight,
       color: color,

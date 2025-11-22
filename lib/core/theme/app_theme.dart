@@ -1,6 +1,5 @@
 import 'package:fintech_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   const AppTheme._();
@@ -8,7 +7,6 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     scaffoldBackgroundColor: AppColors.lightBackground,
-    fontFamily: GoogleFonts.lato().fontFamily,
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primaryColor,
       brightness: Brightness.light,
@@ -22,12 +20,11 @@ class AppTheme {
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: AppColors.darkBackground,
-    fontFamily: GoogleFonts.lato().fontFamily,
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primaryColor,
-      brightness: Brightness.light,
+      brightness: Brightness.dark,
     ),
-    textTheme: ThemeData.light().textTheme.apply(
+    textTheme: ThemeData.dark().textTheme.apply(
       bodyColor: AppColors.white,
       displayColor: AppColors.white,
     ),

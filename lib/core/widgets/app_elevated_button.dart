@@ -4,8 +4,8 @@ import 'package:fintech_app/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-class AppTextButton extends StatelessWidget {
-  const AppTextButton({
+class AppElevatedButton extends StatelessWidget {
+  const AppElevatedButton({
     super.key,
     required this.onPressed,
     required this.text,
