@@ -9,6 +9,7 @@ class AppTextStyles {
   static TextStyle regular16 = _regular(fontSize: 16);
   static TextStyle regular28 = _regular(fontSize: 28);
   // Medium
+  static TextStyle medium10 = _medium(fontSize: 10);
   static TextStyle medium12 = _medium(fontSize: 12);
   static TextStyle medium14 = _medium(fontSize: 14);
   static TextStyle medium20 = _medium(fontSize: 20);
