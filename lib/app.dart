@@ -1,6 +1,5 @@
-import 'package:fintech_app/core/theme/app_theme.dart';
-import 'package:fintech_app/features/portfolio/screens/portfolio_intro_screen.dart';
-import 'package:flutter/material.dart';
+import 'package:fintech_app/core/utils/exports.dart';
+import 'package:fintech_app/features/payment/feature_imports.dart';
 
 class FintechApp extends StatelessWidget {
   const FintechApp({super.key});
@@ -10,7 +9,8 @@ class FintechApp extends StatelessWidget {
     return MaterialApp(
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: const PortfolioIntroScreen(),
+      themeMode: ThemeMode.light,
+      home: const PaymentMethodsView(),
     );
   }
 }
