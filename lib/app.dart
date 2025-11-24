@@ -1,3 +1,4 @@
+import 'package:fintech_app/core/routing/app_router.dart';
 import 'package:fintech_app/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,8 @@ class FintechApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      
+      themeMode: ThemeMode.light,
+      routerConfig: AppRouter.router,
     );
   }
 }

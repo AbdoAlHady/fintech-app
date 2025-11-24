@@ -1,3 +1,4 @@
+import 'package:fintech_app/core/utils/exports.dart';
 import 'package:flutter/material.dart';
 
 class MainShellLayout extends StatefulWidget {
@@ -54,8 +55,8 @@ class _MainShellLayoutState extends State<MainShellLayout> {
         },
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Color(0xFF1D3A70),
-        unselectedItemColor: const Color(0xFF979797),
-        backgroundColor: Colors.white.withOpacity(0.8),
+        unselectedItemColor: AppColors.unSelectedIcon,
+        backgroundColor: context.customColors.cardColor,
         items: items,
       ),
     );
