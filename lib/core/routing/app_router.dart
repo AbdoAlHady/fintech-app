@@ -1,6 +1,6 @@
 import 'package:fintech_app/features/market/presentaton/views/market_screen.dart';
 import 'package:fintech_app/features/market/presentaton/widgets/custom_bottom_nav_bar.dart';
-import 'package:fintech_app/features/portfolio/presentation/views/portfolio_view.dart';
+import 'package:fintech_app/features/portfolio/feature_imports.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
