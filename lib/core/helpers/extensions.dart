@@ -1,3 +1,4 @@
+import 'package:fintech_app/core/theme/custom_color_extension.dart';
 import 'package:flutter/material.dart';
 
 extension ContextExtension on BuildContext {
@@ -25,6 +26,8 @@ extension ContextExtension on BuildContext {
 
   double get height => MediaQuery.of(this).size.height;
   double get width => MediaQuery.of(this).size.width;
+
+  CustomColors get customColors => Theme.of(this).customColors;
 }
 
 extension StringExtension on String? {

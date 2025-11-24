@@ -10,9 +10,13 @@ class AppAssets {
 
   static const String svgsApplePay = "assets/svgs/apple_pay.svg";
 
+  static const String svgsArrow = "assets/svgs/arrow.svg";
+
   static const String svgsArrowDown = "assets/svgs/arrow_down.png";
 
   static const String svgsArrowUp = "assets/svgs/arrow_up.svg";
+
+  static const String svgsBitcoin = "assets/svgs/bitcoin.svg";
 
   static const String svgsCard = "assets/svgs/card.svg";
 

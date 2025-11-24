@@ -15,6 +15,9 @@ class PortfolioViewBody extends StatelessWidget {
           space(height: 40),
           PortfolioChart(),
           space(height: 27),
+          MyHoldings(),
+          space(height: 10),
+          RecentTransactions(),
         ],
       ),
     );
