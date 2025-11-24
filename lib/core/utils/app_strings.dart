@@ -5,4 +5,5 @@ class AppStrings {
   static const String paymentMethod = 'Payment Methods';
   static const String sendReceipt = 'Send receipt to your email';
   static const String buy = 'Buy';
+  static const String portfolio = 'Portfolio';
 }

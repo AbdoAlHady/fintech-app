@@ -5,6 +5,9 @@ class PortfolioView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: PortfolioViewBody());
+    return Scaffold(
+      appBar: AppBar(title: Text(AppStrings.portfolio)),
+      body: PortfolioViewBody().withPadding(horizontal: 23, vertical: 30),
+    );
   }
 }

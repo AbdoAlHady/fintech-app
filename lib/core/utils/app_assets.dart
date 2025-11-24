@@ -18,6 +18,8 @@ class AppAssets {
 
   static const String svgsMatserCard = "assets/svgs/matser_card.svg";
 
+  static const String svgsPortfolioCard = "assets/svgs/portfolio_card.svg";
+
   static const String svgsVisa = "assets/svgs/visa.svg";
 }
 

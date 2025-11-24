@@ -35,6 +35,7 @@ dependencies:
   google_fonts: ^6.3.2
   skeletonizer: ^2.1.0+1
   flutter_svg: ^2.2.3
+  fl_chart: ^1.1.1
 
 dev_dependencies:
 

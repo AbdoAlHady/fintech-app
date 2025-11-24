@@ -5,6 +5,18 @@ class PortfolioViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          PortfolioTotalValue(),
+          space(height: 24),
+          PortfolioMonths(),
+          space(height: 40),
+          PortfolioChart(),
+          space(height: 27),
+        ],
+      ),
+    );
   }
 }
