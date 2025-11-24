@@ -1,7 +1,5 @@
 import 'package:fintech_app/core/theme/app_text_styles.dart';
-import 'package:fintech_app/core/widgets/app_elevated_button.dart';
 import 'package:fintech_app/features/market/presentaton/widgets/crypto_item.dart';
-import 'package:fintech_app/features/market/presentaton/widgets/custom_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 class MarketScreen extends StatelessWidget {
@@ -59,7 +57,7 @@ class MarketScreen extends StatelessWidget {
                 height: 40,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                //  padding: const EdgeInsets.symmetric(horizontal: 4),
+                  //  padding: const EdgeInsets.symmetric(horizontal: 4),
                   children: [
                     _buildFilterChip('All', isSelected: true),
                     _buildFilterChip('DeFi'),
@@ -120,37 +118,34 @@ class MarketScreen extends StatelessWidget {
                       isUp: true,
                       logoColor: Colors.black87,
                       ticker: "R",
-                   ),
+                    ),
                   ],
                 ),
               ),
             ],
           ),
         ),
-        
       ),
     );
   }
 
-
-Widget _buildFilterChip(String label, {bool isSelected = false}) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 6),
-    child: ChoiceChip(
-      
-      label: Text(
-        label,
-        style: TextStyle(
-          color: isSelected ? Colors.white :  Color(0xFF1E1F4B),
+  Widget _buildFilterChip(String label, {bool isSelected = false}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 6),
+      child: ChoiceChip(
+        label: Text(
+          label,
+          style: TextStyle(
+            color: isSelected ? Colors.white : Color(0xFF1E1F4B),
+          ),
         ),
+        selected: isSelected,
+        selectedColor: const Color(0xFF1D3A70),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        onSelected: (_) {},
       ),
-      selected: isSelected,
-      selectedColor: const Color(0xFF1D3A70),
-      backgroundColor: Colors.white,
-      elevation: 0,
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      onSelected: (_) {},
-    ),
-  );
-}
+    );
+  }
 }
