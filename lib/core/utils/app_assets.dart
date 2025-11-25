@@ -4,6 +4,8 @@ class AppAssets {
   
   static const String imagesApplePay = "assets/images/apple_pay.png";
 
+  static const String imagesAvatar = "assets/images/avatar.jpg";
+
   static const String imagesMasterCard = "assets/images/master_card.png";
 
   static const String imagesVisa = "assets/images/visa.png";
