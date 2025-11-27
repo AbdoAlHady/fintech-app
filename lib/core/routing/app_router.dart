@@ -1,11 +1,11 @@
-import 'package:fintech_app/features/market/presentaton/views/market_screen.dart';
-import 'package:fintech_app/features/market/presentaton/widgets/custom_bottom_nav_bar.dart';
+import 'package:fintech_app/features/market/presentation/views/market_view.dart';
+import 'package:fintech_app/features/market/presentation/widgets/custom_bottom_nav_bar.dart';
 import 'package:fintech_app/features/portfolio/feature_imports.dart';
 import 'package:fintech_app/features/settings/feature_imports.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
-  static const String marketScreen = '/';
+  static const String marketView = '/';
   static const String portfolioScreen = '/portfolioScreen';
   static const String settingsView = '/settingsView';
 
@@ -18,7 +18,7 @@ abstract class AppRouter {
         },
         routes: [
           GoRoute(
-            path: marketScreen,
+            path: marketView,
             builder: (context, state) {
               return const MarketScreen();
             },

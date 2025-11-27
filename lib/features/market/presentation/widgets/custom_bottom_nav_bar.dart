@@ -1,5 +1,6 @@
+import 'package:fintech_app/core/routing/app_router.dart';
 import 'package:fintech_app/core/utils/exports.dart';
-import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MainShellLayout extends StatefulWidget {
   final Widget child;
@@ -11,16 +12,13 @@ class MainShellLayout extends StatefulWidget {
 }
 
 class _MainShellLayoutState extends State<MainShellLayout> {
-  @override
-  void initState() {
-    super.initState();
-  }
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    int selectedIndex = 0;
     final items = <BottomNavigationBarItem>[
       const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+
       const BottomNavigationBarItem(
         icon: Icon(Icons.shopping_basket),
         label: 'Market',
@@ -41,20 +39,24 @@ class _MainShellLayoutState extends State<MainShellLayout> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: (index) {
+          setState(() => selectedIndex = index);
           switch (index) {
             case 0:
-              //  context.go('/news_feed');
+                context.go(AppRouter.settingsView);
               break;
             case 1:
-              //  context.go('/post');
+                context.go(AppRouter.marketView);
               break;
             case 2:
-              //    context.go('/profile');
+                context.go(AppRouter.portfolioScreen);
               break;
+            case 3:
+               // context.go(AppRouter.portfolioScreen);
+              break;  
           }
         },
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Color(0xFF1D3A70),
+        selectedItemColor: AppColors.primaryColor,
         unselectedItemColor: AppColors.unSelectedIcon,
         backgroundColor: context.customColors.cardColor,
         items: items,

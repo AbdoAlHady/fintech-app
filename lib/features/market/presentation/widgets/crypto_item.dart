@@ -1,12 +1,17 @@
+import 'package:fintech_app/core/helpers/spacing.dart';
+import 'package:fintech_app/core/theme/app_colors.dart';
+import 'package:fintech_app/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CryptoItem extends StatelessWidget {
   final String name;
   final String price;
   final String rank;
   final bool isUp;
+  final String percentage;
+  final String iconPath; 
   final Color logoColor;
-  final String ticker;
 
   const CryptoItem({
     super.key,
@@ -14,84 +19,80 @@ class CryptoItem extends StatelessWidget {
     required this.price,
     required this.rank,
     required this.isUp,
+    required this.percentage,
+    required this.iconPath,
     required this.logoColor,
-    required this.ticker,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 14),
-      padding: const EdgeInsets.all(14),
+      padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
         children: [
-          // Logo
           Container(
             width: 56,
             height: 56,
             decoration: BoxDecoration(
-              color: const Color(0xFFF1F6F9),
+              color:  AppColors.grey200,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Center(
               child: CircleAvatar(
-                backgroundColor: logoColor,
                 radius: 18,
-                child: Text(
-                  ticker,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+                backgroundColor: logoColor,
+                child: SvgPicture.asset(
+                  iconPath, 
+                  width: 24,
+                  height: 24,
                 ),
               ),
             ),
           ),
 
-          const SizedBox(width: 14),
+          space(width: 14),
 
-          // Name + rank
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   name,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF1E3E28),
+                  style:  AppTextStyles.bold18.copyWith(
+                    color: AppColors.darkblue,
                   ),
                 ),
-                const SizedBox(height: 6),
+                space(height: 6),
                 Text(
                   rank,
-                  style: TextStyle(color: Colors.grey[600]),
+                  style: TextStyle(color: AppColors.grey3),
                 ),
               ],
             ),
           ),
 
-          // Price + change
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
                 price,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF1E3E28),
+                style:  AppTextStyles.bold16.copyWith(
+                  color: AppColors.darkColor,
                 ),
               ),
-              const SizedBox(height: 8),
+
+              space(height: 8),
+
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                 decoration: BoxDecoration(
-                  color: isUp ? Colors.green : Colors.red,
+                  color: isUp ? AppColors.green : AppColors.red,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Row(
@@ -99,12 +100,12 @@ class CryptoItem extends StatelessWidget {
                     Icon(
                       isUp ? Icons.arrow_upward : Icons.arrow_downward,
                       size: 14,
-                      color: Colors.white,
+                      color: AppColors.white,
                     ),
                     const SizedBox(width: 4),
                     Text(
-                      isUp ? "15.3%" : "-2.1%",
-                      style: const TextStyle(color: Colors.white),
+                      percentage, 
+                      style: AppTextStyles.regular16.copyWith(color: AppColors.white),
                     ),
                   ],
                 ),
