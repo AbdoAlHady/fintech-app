@@ -1,3 +1,4 @@
+import 'package:fintech_app/features/market/presentation/views/coin_details_view.dart';
 import 'package:fintech_app/features/market/presentation/views/market_view.dart';
 import 'package:fintech_app/features/market/presentation/widgets/custom_bottom_nav_bar.dart';
 import 'package:fintech_app/features/portfolio/feature_imports.dart';
@@ -36,6 +37,10 @@ abstract class AppRouter {
             },
           ),
         ],
+      ),
+      GoRoute(path: '/coin_detail' , builder: (context, state) {
+        return  CoinDetailsView();
+      }
       ),
     ],
   );

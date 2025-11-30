@@ -8,4 +8,6 @@ class AppStrings {
   static const String portfolio = 'Portfolio';
   static const String market = 'Crypto Market';
   static const String search = 'Search';
+  static const String coinDetails = 'Coin Details';
+
 }
