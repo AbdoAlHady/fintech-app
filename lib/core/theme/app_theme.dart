@@ -7,44 +7,46 @@ class AppTheme {
 
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
+    primaryColor: AppColors.primaryColor,
+    scaffoldBackgroundColor: AppColors.lightBackground,
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.lightBackground,
-      foregroundColor: AppColors.primaryColor,
       elevation: 0,
-      surfaceTintColor: Colors.transparent,
+      centerTitle: true,
+      iconTheme: IconThemeData(color: AppColors.primaryColor),
       titleTextStyle: AppTextStyles.bold24.copyWith(
         color: AppColors.primaryColor,
       ),
     ),
-    scaffoldBackgroundColor: AppColors.lightBackground,
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primaryColor,
       brightness: Brightness.light,
     ),
     textTheme: ThemeData.light().textTheme.apply(
-      bodyColor: AppColors.primaryColor,
-      displayColor: AppColors.primaryColor,
+      bodyColor: AppColors.textBlack,
+      displayColor: AppColors.textBlack,
     ),
   );
 
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
+    primaryColor: AppColors.lightPrimaryColor,
     scaffoldBackgroundColor: AppColors.darkBackground,
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: AppColors.primaryColor,
-      brightness: Brightness.dark,
-    ),
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.darkBackground,
-      // foregroundColor: AppColors.white,
       elevation: 0,
-      titleTextStyle: AppTextStyles.bold24,
-
-      surfaceTintColor: Colors.transparent,
+      centerTitle: true,
+      iconTheme: IconThemeData(color: AppColors.white),
+      titleTextStyle: AppTextStyles.bold24.copyWith(color: AppColors.white),
+    ),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: AppColors.lightPrimaryColor,
+      brightness: Brightness.dark,
     ),
     textTheme: ThemeData.dark().textTheme.apply(
       bodyColor: AppColors.white,
       displayColor: AppColors.white,
+
     ),
   );
 }

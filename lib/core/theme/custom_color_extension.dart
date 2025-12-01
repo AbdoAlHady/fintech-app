@@ -4,16 +4,31 @@ class CustomColors {
   const CustomColors._({
     required this.cardColor,
     required this.secondaryCardColor,
+    required this.primaryColor,
+    required this.textColor,
+    required this.hintColor,
   });
   final Color cardColor;
   final Color secondaryCardColor;
+  final Color primaryColor;
+  final Color textColor;
+  final Color hintColor;
 
-  CustomColors({required this.cardColor, required this.secondaryCardColor});
+  CustomColors({
+    required this.cardColor,
+    required this.secondaryCardColor,
+    required this.primaryColor,
+    required this.textColor,
+    required this.hintColor,
+  });
 
   factory CustomColors._light() {
     return CustomColors._(
       cardColor: AppColors.white,
       secondaryCardColor: AppColors.grey200,
+      primaryColor: AppColors.primaryColor,
+      textColor: AppColors.textBlack,
+      hintColor: AppColors.hintColor,
     );
   }
 
@@ -21,6 +36,9 @@ class CustomColors {
     return CustomColors._(
       cardColor: AppColors.darkColor,
       secondaryCardColor: AppColors.lightDarkColor,
+      primaryColor: AppColors.lightPrimaryColor,
+      textColor: AppColors.white,
+      hintColor: AppColors.grey3,
     );
   }
 }

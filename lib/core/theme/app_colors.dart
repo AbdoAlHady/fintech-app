@@ -18,7 +18,7 @@ class AppColors {
   static final Color red = Color(0xFFFF403B);
   static final Color lightRed = Color(0xffFF403B).withAlpha(50);
   static final Color unSelectedIcon = Color(0xFF979797);
-  static final Color hintColor = Color(0xFF8F8F8F);
+  static final Color hintColor = Color(0xFF8E949A);
   static final Color textBlack = Color(0xFF152C07);
   static final Color textGrey = Color(0xFF5D5C5D);
   static final Color lightBackground = Color(0xFFF5F8FE);
@@ -31,4 +31,6 @@ class AppColors {
   static const Color softViolet = Color(0xFF8979FF);
   static const Color darkColor = Color(0xFF0D0D0D);
   static const Color lightDarkColor = Color(0xFF1B1B1B);
+  static const Color textColor = Color(0xFF18191F);
+
 }
