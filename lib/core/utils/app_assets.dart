@@ -20,6 +20,10 @@ class AppAssets {
 
   static const String svgsBitcoin = "assets/svgs/bitcoin.svg";
 
+  static const String svgsEtherium = "assets/svgs/bitcoin.svg";
+
+  static const String svgsLitecoin = "assets/svgs/bitcoin.svg";
+
   static const String svgsCard = "assets/svgs/card.svg";
 
   static const String svgsMatserCard = "assets/svgs/matser_card.svg";
