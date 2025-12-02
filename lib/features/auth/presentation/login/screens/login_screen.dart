@@ -4,6 +4,7 @@ import 'package:fintech_app/core/widgets/app_rich_text_button.dart';
 import 'package:fintech_app/features/auth/presentation/login/widgets/login/login_form.dart';
 import 'package:fintech_app/features/auth/presentation/login/widgets/login/login_header.dart';
 import 'package:fintech_app/features/auth/presentation/login/widgets/login/social_login.dart';
+import 'package:fintech_app/features/auth/presentation/register/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,7 +25,14 @@ class LoginScreen extends StatelessWidget {
               text: "Don't have an account?",
               spacing: 3.h,
               buttonText: 'Sign Up',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const RegisterScreen(),
+                  ),
+                );
+              },
             ).withPadding(bottom: 40.h),
           ],
         ),
