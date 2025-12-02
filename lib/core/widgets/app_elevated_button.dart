@@ -51,7 +51,7 @@ class AppElevatedButton extends StatelessWidget {
               Set<WidgetState> states,
             ) {
               if (states.contains(WidgetState.disabled)) {
-                return (backgroundColor ?? AppColors.primaryColor).withOpacity(
+                return (backgroundColor ?? AppColors.primaryColor).withValues(alpha:
                   0.6,
                 );
               }

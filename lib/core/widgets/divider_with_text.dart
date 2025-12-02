@@ -21,7 +21,7 @@ class DividerWithText extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
             text,
-            style: AppTextStyles.regular12.copyWith(
+            style: AppTextStyles.semiBold12.copyWith(
               color: context.customColors.primaryColor,
             ),
           ),

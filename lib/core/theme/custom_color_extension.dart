@@ -7,12 +7,15 @@ class CustomColors {
     required this.primaryColor,
     required this.textColor,
     required this.hintColor,
+    required this.lightBackground,
   });
   final Color cardColor;
   final Color secondaryCardColor;
   final Color primaryColor;
   final Color textColor;
   final Color hintColor;
+  final Color lightBackground;
+
 
   CustomColors({
     required this.cardColor,
@@ -20,10 +23,12 @@ class CustomColors {
     required this.primaryColor,
     required this.textColor,
     required this.hintColor,
+    required this.lightBackground,
   });
 
   factory CustomColors._light() {
     return CustomColors._(
+      lightBackground: AppColors.lightBackground,
       cardColor: AppColors.white,
       secondaryCardColor: AppColors.grey200,
       primaryColor: AppColors.primaryColor,
@@ -34,6 +39,7 @@ class CustomColors {
 
   factory CustomColors._dark() {
     return CustomColors._(
+      lightBackground: AppColors.darkBackground,
       cardColor: AppColors.darkColor,
       secondaryCardColor: AppColors.lightDarkColor,
       primaryColor: AppColors.lightPrimaryColor,
