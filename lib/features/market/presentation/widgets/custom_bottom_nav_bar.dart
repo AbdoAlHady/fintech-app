@@ -42,17 +42,17 @@ class _MainShellLayoutState extends State<MainShellLayout> {
           setState(() => selectedIndex = index);
           switch (index) {
             case 0:
-                context.go(AppRouter.settingsView);
+              context.go(AppRouter.homeView);
               break;
             case 1:
-                context.go(AppRouter.marketView);
+              context.go(AppRouter.marketView);
               break;
             case 2:
-                context.go(AppRouter.portfolioScreen);
+              context.go(AppRouter.portfolioScreen);
               break;
             case 3:
-               // context.go(AppRouter.portfolioScreen);
-              break;  
+              context.go(AppRouter.settingsView);
+              break;
           }
         },
         type: BottomNavigationBarType.fixed,
