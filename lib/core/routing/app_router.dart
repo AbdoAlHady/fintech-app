@@ -1,3 +1,4 @@
+import 'package:fintech_app/features/home/feature_imports.dart';
 import 'package:fintech_app/features/market/presentation/views/coin_details_view.dart';
 import 'package:fintech_app/features/market/presentation/views/market_view.dart';
 import 'package:fintech_app/features/market/presentation/widgets/custom_bottom_nav_bar.dart';
@@ -9,15 +10,22 @@ abstract class AppRouter {
   static const String marketView = '/';
   static const String portfolioScreen = '/portfolioScreen';
   static const String settingsView = '/settingsView';
+  static const String homeView = '/homeView';
 
   static final router = GoRouter(
-    initialLocation: settingsView,
+    initialLocation: homeView,
     routes: <RouteBase>[
       ShellRoute(
         builder: (context, state, child) {
           return MainShellLayout(child: child);
         },
         routes: [
+          GoRoute(
+            path: homeView,
+            builder: (context, state) {
+              return const HomeView();
+            },
+          ),
           GoRoute(
             path: marketView,
             builder: (context, state) {
@@ -38,9 +46,11 @@ abstract class AppRouter {
           ),
         ],
       ),
-      GoRoute(path: '/coin_detail' , builder: (context, state) {
-        return  CoinDetailsView();
-      }
+      GoRoute(
+        path: '/coin_detail',
+        builder: (context, state) {
+          return CoinDetailsView();
+        },
       ),
     ],
   );
