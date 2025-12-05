@@ -20,6 +20,7 @@ class FintechApp extends StatelessWidget {
             darkTheme: AppTheme.darkTheme,
             themeMode: state.themeMode,
             routerConfig: AppRouter.router,
+            themeAnimationStyle: AnimationStyle(curve: Curves.easeInOut),
           );
         },
       ),
