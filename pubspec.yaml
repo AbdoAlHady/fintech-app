@@ -92,9 +92,45 @@ flutter_assets:
   assets_path:
     - assets/images/
     - assets/svgs/
+    - assets/flavors/
+    - assets/android/
     # - assets/animation/
   output_path: lib/core/utils/
   filename: app_assets.dart
   ignore_comments: true
   field_prefix: null
   classname: AppAssets
+
+
+flavorizr:
+  ide: "vscode"
+  app:
+    android:
+      flavorDimensions: "flavor-type"
+
+  flavors:
+    dev:
+      app:
+        name: "Fintech Dev"
+      android:
+        applicationId: "com.Fintech.dev"
+        icon: "assets/flavors/dev/app_icon.png"
+        adaptiveIcon:
+          foreground: "assets/flavors/dev/app_icon_foreground.png"
+          background: "assets/android/app_icon_background.png"
+      ios:
+        bundleId: "com.Fintech.dev"
+        icon: "assets/flavors/dev/app_icon.png"
+
+    prod:
+      app:
+        name: "Fintech"
+      android:
+        applicationId: "com.Fintech.app"
+        icon: "assets/flavors/prod/app_icon.png"
+        adaptiveIcon:
+          foreground: "assets/flavors/prod/app_icon_foreground.png"
+          background: "assets/android/app_icon_background.png"
+      ios:
+        bundleId: "com.Fintech.app"
+        icon: "assets/flavors/prod/app_icon.png"
