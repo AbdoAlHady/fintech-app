@@ -14,17 +14,19 @@ class AppAssets {
 
   static const String svgsArrow = "assets/svgs/arrow.svg";
 
+  static const String svgsArrow2 = "assets/svgs/arrow2.svg";
+
   static const String svgsArrowDown = "assets/svgs/arrow_down.png";
 
   static const String svgsArrowUp = "assets/svgs/arrow_up.svg";
 
   static const String svgsBitcoin = "assets/svgs/bitcoin.svg";
 
-  static const String svgsEtherium = "assets/svgs/bitcoin.svg";
-
-  static const String svgsLitecoin = "assets/svgs/bitcoin.svg";
-
   static const String svgsCard = "assets/svgs/card.svg";
+
+  static const String svgsEthereum = "assets/svgs/ethereum.svg";
+
+  static const String svgsLitecoin = "assets/svgs/litecoin.svg";
 
   static const String svgsMatserCard = "assets/svgs/matser_card.svg";
 

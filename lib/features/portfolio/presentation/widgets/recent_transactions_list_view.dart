@@ -8,10 +8,10 @@ class RecentTransactionsListView extends StatelessWidget {
     return ListView.separated(
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: 5,
+      itemCount: dummyTransactionEntity.length,
       separatorBuilder: (context, index) => space(height: 10),
       itemBuilder: (context, index) {
-        return TransactionListItem();
+        return TransactionListItem(transaction: dummyTransactionEntity[index]);
       },
     );
   }

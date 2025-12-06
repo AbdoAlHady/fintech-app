@@ -6,10 +6,12 @@ class MenuItem extends StatelessWidget {
     required this.title,
     required this.icon,
     this.onTap,
+    this.trailing,
   });
   final String title;
   final IconData icon;
   final VoidCallback? onTap;
+  final Widget? trailing;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class MenuItem extends StatelessWidget {
         child: Icon(icon, color: AppColors.white, size: 18),
       ),
       title: Text(title, style: AppTextStyles.regular16),
-      trailing: Icon(Icons.arrow_forward_ios, size: 16),
+      trailing: trailing ?? Icon(Icons.arrow_forward_ios, size: 16),
       onTap: onTap,
     );
   }

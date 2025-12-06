@@ -1,7 +1,8 @@
 part of '../../feature_imports.dart';
 
 class TransactionListItem extends StatelessWidget {
-  const TransactionListItem({super.key});
+  const TransactionListItem({super.key, required this.transaction});
+  final TransactionEntity transaction;
 
   @override
   Widget build(BuildContext context) {
@@ -24,16 +25,16 @@ class TransactionListItem extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: context.customColors.secondaryCardColor,
                 ),
-                child: Center(child: SvgPicture.asset(AppAssets.svgsArrow)),
+                child: Center(child: SvgPicture.asset(transaction.iconPath)),
               ),
               space(width: 12),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Buy Bitcoin', style: AppTextStyles.bold16),
+                  Text(transaction.title, style: AppTextStyles.bold16),
                   space(height: 4),
                   Text(
-                    '2 hours ago',
+                    transaction.formattedTime,
                     style: AppTextStyles.medium14.copyWith(
                       color: AppColors.grey3,
                     ),
@@ -43,10 +44,13 @@ class TransactionListItem extends StatelessWidget {
               Spacer(),
               Column(
                 children: [
-                  Text('0.01 BTC', style: AppTextStyles.medium14),
+                  Text(
+                    '${transaction.amount} ${transaction.amountUnit}',
+                    style: AppTextStyles.medium14,
+                  ),
                   space(height: 4),
                   Text(
-                    '-\$452.50',
+                    transaction.priceValue,
                     style: AppTextStyles.regular12.copyWith(
                       color: AppColors.lightGreen,
                     ),

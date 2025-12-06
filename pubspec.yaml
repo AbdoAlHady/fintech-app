@@ -29,13 +29,20 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.8
+  equatable: ^2.0.7
+  firebase_core: ^4.2.1
   fl_chart: ^1.1.1
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.1.1
+  flutter_flavorizr: ^2.4.1
+  flutter_native_splash: ^2.4.7
   flutter_svg: ^2.2.3
   go_router: ^17.0.0
   google_fonts: ^6.3.2
   iconsax: ^0.0.8
+  jailbreak_root_detection: ^1.2.0+1
+  shared_preferences: ^2.5.3
   skeletonizer: ^2.1.0+1
 
 dev_dependencies:
@@ -86,9 +93,69 @@ flutter_assets:
   assets_path:
     - assets/images/
     - assets/svgs/
+    - assets/flavors/
+    - assets/android/
     # - assets/animation/
   output_path: lib/core/utils/
   filename: app_assets.dart
   ignore_comments: true
   field_prefix: null
   classname: AppAssets
+
+
+flavorizr:
+  ide: "vscode"
+  app:
+    android:
+      flavorDimensions: "flavor-type"
+  
+  instructions:
+    - assets:download
+    - assets:extract
+    - android:androidManifest
+    - android:buildGradle
+    - android:icons
+    - flutter:flavors
+    - flutter:app
+    - flutter:pages
+    - flutter:main
+    - ios:podfile
+    - ios:xcconfig
+    - ios:buildTargets
+    - ios:schema
+    - ios:icons
+    - ios:plist
+    - ios:launchScreen
+    - google:firebase
+    - assets:clean
+    - ide:config
+
+  flavors:
+    dev:   
+      app:
+        name: "Fintech Dev"
+      android:
+        applicationId: "com.example.fintech.app.dev"
+        icon: "assets/flavors/dev/app_icon.png"
+        adaptiveIcon:
+          foreground: "assets/flavors/dev/app_icon_foreground.png"
+          background: "assets/android/app_icon_background.png"        
+      ios:
+        bundleId: "com.example.fintech.app.dev"
+        icon: "assets/flavors/dev/app_icon.png"
+      firebase:
+        config: "firebase/dev"
+    prod:
+      app:
+        name: "Fintech"
+      android:
+        applicationId: "com.example.fintech.app"
+        icon: "assets/flavors/prod/app_icon.png"
+        adaptiveIcon:
+          foreground: "assets/flavors/prod/app_icon_foreground.png"
+          background: "assets/android/app_icon_background.png"  
+      ios:
+        bundleId: "com.example.fintech.app"
+        icon: "assets/flavors/prod/app_icon.png"
+      firebase:
+        config: "firebase/prod"

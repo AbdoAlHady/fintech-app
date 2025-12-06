@@ -34,11 +34,7 @@ class SettingsViewBody extends StatelessWidget {
             onTap: () {},
           ),
           _buildDivider(),
-          MenuItem(
-            title: 'Dark Mode',
-            icon: Icons.dark_mode_outlined,
-            onTap: () {},
-          ),
+          ChangeThemeMenu(),
         ],
       ),
     );
