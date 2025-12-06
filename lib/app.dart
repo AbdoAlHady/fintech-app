@@ -1,33 +1,29 @@
-import 'package:flutter/foundation.dart';
+import 'package:fintech_app/core/app/cubits/theme_cubit.dart';
+import 'package:fintech_app/core/app/cubits/theme_state.dart';
+import 'package:fintech_app/core/routing/app_router.dart';
+import 'package:fintech_app/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'flavors.dart';
-import 'pages/my_home_page.dart';
-
-class App extends StatelessWidget {
-  const App({super.key});
+class FintechApp extends StatelessWidget {
+  const FintechApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: F.title,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: _flavorBanner(child: MyHomePage(), show: kDebugMode),
+    return BlocProvider(
+      create: (context) => ThemeCubit(),
+      child: BlocBuilder<ThemeCubit, ThemeState>(
+        builder: (context, state) {
+          return MaterialApp.router(
+            debugShowCheckedModeBanner: false,
+            theme: AppTheme.lightTheme,
+            darkTheme: AppTheme.darkTheme,
+            themeMode: state.themeMode,
+            routerConfig: AppRouter.router,
+            themeAnimationStyle: AnimationStyle(curve: Curves.easeInOut),
+          );
+        },
+      ),
     );
   }
-
-  Widget _flavorBanner({required Widget child, bool show = true}) => show
-      ? Banner(
-          location: BannerLocation.topStart,
-          message: F.name,
-          color: Colors.green.withAlpha(150),
-          textStyle: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: 12.0,
-            letterSpacing: 1.0,
-          ),
-          textDirection: TextDirection.ltr,
-          child: child,
-        )
-      : Container(child: child);
 }
