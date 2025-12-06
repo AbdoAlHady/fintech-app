@@ -7,12 +7,12 @@ class HoldingsListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       itemBuilder: (context, index) {
-        return HoldingItem();
+        return HoldingItem(holding: dummyHoldingEntity[index]);
       },
       separatorBuilder: (context, index) {
         return space(height: 10);
       },
-      itemCount: 5,
+      itemCount: dummyHoldingEntity.length,
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
     );
