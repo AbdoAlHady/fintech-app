@@ -50,20 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD2ucDh8g6mixIb7hG4yZOvl1GuHe7nuMU',
-    appId: '1:396522738288:android:8711e749624c55b5c89ab5',
-    messagingSenderId: '396522738288',
-    projectId: 'fintech-app-58dc3',
-    storageBucket: 'fintech-app-58dc3.firebasestorage.app',
+    apiKey: 'AIzaSyCvG2qxiSNdMpXo_zNewitTQU0MYjkbXO8',
+    appId: '1:822420026714:android:b1306b9506b1abe7bb2f63',
+    messagingSenderId: '822420026714',
+    projectId: 'fintech-app-dev-b0c4e',
+    storageBucket: 'fintech-app-dev-b0c4e.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDdhl6pfVe0m7EAQ4FzrR0etLLvTWIV-sk',
-    appId: '1:396522738288:ios:467892b240189634c89ab5',
-    messagingSenderId: '396522738288',
-    projectId: 'fintech-app-58dc3',
-    storageBucket: 'fintech-app-58dc3.firebasestorage.app',
-    iosBundleId: 'com.Fintech.dev',
+    apiKey: 'AIzaSyAKwLfLaeH6SOdSaW2MAxAupdkUlhhXNQw',
+    appId: '1:822420026714:ios:f346194285549081bb2f63',
+    messagingSenderId: '822420026714',
+    projectId: 'fintech-app-dev-b0c4e',
+    storageBucket: 'fintech-app-dev-b0c4e.firebasestorage.app',
+    iosBundleId: 'com.example.fintech.app.dev',
   );
-
 }

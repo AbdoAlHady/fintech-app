@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyD2ucDh8g6mixIb7hG4yZOvl1GuHe7nuMU',
-    appId: '1:396522738288:android:8711e749624c55b5c89ab5',
+    appId: '1:396522738288:android:0125b5be7cf1f8e6c89ab5',
     messagingSenderId: '396522738288',
     projectId: 'fintech-app-58dc3',
     storageBucket: 'fintech-app-58dc3.firebasestorage.app',
@@ -59,10 +59,10 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDdhl6pfVe0m7EAQ4FzrR0etLLvTWIV-sk',
-    appId: '1:396522738288:ios:467892b240189634c89ab5',
+    appId: '1:396522738288:ios:881948756e40722dc89ab5',
     messagingSenderId: '396522738288',
     projectId: 'fintech-app-58dc3',
     storageBucket: 'fintech-app-58dc3.firebasestorage.app',
-    iosBundleId: 'com.Fintech.dev',
+    iosBundleId: 'com.example.fintech.app',
   );
 }

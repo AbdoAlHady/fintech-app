@@ -110,7 +110,7 @@ flavorizr:
       flavorDimensions: "flavor-type"
 
   flavors:
-    dev:
+    dev:   
       app:
         name: "Fintech Dev"
       android:
@@ -118,11 +118,12 @@ flavorizr:
         icon: "assets/flavors/dev/app_icon.png"
         adaptiveIcon:
           foreground: "assets/flavors/dev/app_icon_foreground.png"
-          background: "assets/android/app_icon_background.png"
+          background: "assets/android/app_icon_background.png"        
       ios:
         bundleId: "com.example.fintech.app.dev"
         icon: "assets/flavors/dev/app_icon.png"
-
+      firebase:
+        config: ".firebase/dev"
     prod:
       app:
         name: "Fintech"
@@ -131,7 +132,9 @@ flavorizr:
         icon: "assets/flavors/prod/app_icon.png"
         adaptiveIcon:
           foreground: "assets/flavors/prod/app_icon_foreground.png"
-          background: "assets/android/app_icon_background.png"
+          background: "assets/android/app_icon_background.png"  
       ios:
         bundleId: "com.example.fintech.app"
         icon: "assets/flavors/prod/app_icon.png"
+      firebase:
+        config: ".firebase/prod"

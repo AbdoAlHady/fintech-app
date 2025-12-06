@@ -1,21 +1,15 @@
-import 'package:fintech_app/app.dart';
-import 'package:fintech_app/core/helpers/cache_helper.dart';
-import 'package:fintech_app/core/services/root_service.dart';
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  final securityService = RootService(bundleId: "com.example.fintech_app");
-  final status = await securityService.checkDeviceSecurity();
+import 'app.dart';
+import 'flavors.dart';
 
-  final isDeviceSafe = status.checkAndLog();
+void main() {
+  F.appFlavor = Flavor.values.firstWhere(
+    (element) => element.name == appFlavor,
+  );
 
-  if (!isDeviceSafe) {
-    print("⚠️ Device is not secure! Take action.");
-  } else {
-    print("✅ Device is safe to use.");
-  }
-
-  await CacheHelper().init();
-  runApp(const FintechApp());
+  runApp(const App());
 }
