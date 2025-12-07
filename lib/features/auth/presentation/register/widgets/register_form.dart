@@ -4,6 +4,7 @@ import 'package:fintech_app/core/theme/app_text_styles.dart';
 import 'package:fintech_app/core/widgets/app_elevated_button.dart';
 import 'package:fintech_app/core/widgets/app_form_field.dart';
 import 'package:fintech_app/core/utils/validators.dart';
+import 'package:fintech_app/features/auth/presentation/verification/screens/biometric_verify_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
@@ -140,11 +141,20 @@ class _RegisterFormState extends State<RegisterForm> {
           space(height: 24.h),
           AppElevatedButton(
             onPressed: () {
-              if (_formKey.currentState!.validate()) {}
+              if (_formKey.currentState!.validate()) {
+                // Navigate to fingerprint setup after successful registration
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const BiometricVerifyScreen(),
+                  ),
+                );
+              }
             },
             text: 'Register',
             textStyle: AppTextStyles.bold18.copyWith(
-              color: context.customColors.cardColor,),
+              color: context.customColors.cardColor,
+            ),
             radius: 30.r,
           ),
         ],

@@ -43,8 +43,8 @@ class SocialLogin extends StatelessWidget {
               },
               child: SvgPicture.asset(
                 'assets/svgs/finger_print.svg',
-                width: 50.w,
-                height: 50.h,
+                width: 40.w,
+                height: 40.h,
               ),
             ),
             space(width: 60.w),
@@ -54,8 +54,8 @@ class SocialLogin extends StatelessWidget {
               },
               child: SvgPicture.asset(
                 'assets/svgs/Face_ID.svg',
-                width: 50.w,
-                height: 50.h,
+                width: 40.w,
+                height: 40.h,
               ),
             ),
           ],

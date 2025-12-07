@@ -23,7 +23,7 @@ class FaceIdScanningContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // Top spacing for back button area
-            SizedBox(height: showBackButton ? 60.h : 20.h),
+            SizedBox(height: showBackButton ? 80.h : 20.h),
             // Face ID Card (centered)
             FaceIdCardWidget(onTap: onTap, isVerified: false),
             // Instruction Text
