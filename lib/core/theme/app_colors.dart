@@ -31,5 +31,7 @@ class AppColors {
   static const Color softViolet = Color(0xFF8979FF);
   static const Color darkColor = Color(0xFF0D0D0D);
   static const Color lightDarkColor = Color(0xFF1B1B1B);
-  
+  static const Color textColor = Color(0xFF18191F);
+
+
 }

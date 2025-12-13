@@ -51,11 +51,11 @@ class AppElevatedButton extends StatelessWidget {
               Set<WidgetState> states,
             ) {
               if (states.contains(WidgetState.disabled)) {
-                return (backgroundColor ?? AppColors.primaryColor).withOpacity(
-                  0.6,
+                return (backgroundColor ?? AppColors.primaryColor).withValues(
+                  alpha: 0.6,
                 );
               }
-              return backgroundColor ?? AppColors.primaryColor;
+              return backgroundColor ?? context.customColors.primaryColor;
             }),
             overlayColor: WidgetStateProperty.resolveWith<Color>((
               Set<WidgetState> states,
@@ -85,14 +85,23 @@ class AppElevatedButton extends StatelessWidget {
           ),
           child: FittedBox(
             fit: BoxFit.scaleDown,
-            child: Text(
-              text,
-              style:
-                  textStyle ??
-                  AppTextStyles.bold18.copyWith(
-                    color: textColor ?? AppColors.white,
+            child: isLoading
+                ? SizedBox(
+                    height: 24,
+                    width: 24,
+                    child: CircularProgressIndicator(
+                      color: textColor ?? textStyle?.color ?? AppColors.white,
+                      strokeWidth: 2.5,
+                    ),
+                  )
+                : Text(
+                    text,
+                    style:
+                        textStyle ??
+                        AppTextStyles.bold18.copyWith(
+                          color: textColor ?? AppColors.white,
+                        ),
                   ),
-            ),
           ),
         ),
       ),
