@@ -88,7 +88,7 @@ class _LoginFormState extends State<LoginForm> {
           BlocConsumer<AuthCubit, AuthState>(
             listener: (context, state) {
               if (state is AuthSuccess) {
-                context.go(AppRouter.marketScreen);
+                context.go(AppRouter.marketView);
               } else if (state is AuthFailure) {
                 Fluttertoast.showToast(
                   msg: state.message,

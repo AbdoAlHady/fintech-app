@@ -1,7 +1,8 @@
 part of '../../feature_imports.dart';
 
 class HoldingItem extends StatelessWidget {
-  const HoldingItem({super.key});
+  const HoldingItem({super.key, required this.holding});
+  final HoldingEntity holding;
 
   @override
   Widget build(BuildContext context) {
@@ -24,25 +25,28 @@ class HoldingItem extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: context.customColors.secondaryCardColor,
                 ),
-                child: Center(child: SvgPicture.asset(AppAssets.svgsBitcoin)),
+                child: Center(child: SvgPicture.asset(holding.iconPath)),
               ),
               space(width: 12),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Bitcoin', style: AppTextStyles.bold16),
+                  Text(holding.name, style: AppTextStyles.bold16),
                   space(height: 4),
                   Text(
-                    'BTC',
+                    holding.symbol,
                     style: AppTextStyles.medium14.copyWith(
                       color: AppColors.grey3,
                     ),
                   ),
                   space(height: 12),
-                  Text('0.05 BTC', style: AppTextStyles.medium14),
+                  Text(
+                    '${holding.amount} ${holding.amountUnit}',
+                    style: AppTextStyles.medium14,
+                  ),
                   space(height: 4),
                   Text(
-                    '\$2,262.53',
+                    holding.currentPrice,
                     style: AppTextStyles.regular12.copyWith(
                       color: AppColors.secondaryColor,
                     ),
@@ -52,17 +56,20 @@ class HoldingItem extends StatelessWidget {
               Spacer(),
               Column(
                 children: [
-                  Text('50%', style: AppTextStyles.bold20),
+                  Text(
+                    '${holding.portfolioPercentage}%',
+                    style: AppTextStyles.bold20,
+                  ),
                   space(height: 24),
                   Text(
-                    '+\$145.20',
+                    '+\$${holding.profitLoss}',
                     style: AppTextStyles.medium14.copyWith(
                       color: AppColors.lightGreen,
                     ),
                   ),
                   space(height: 4),
                   Text(
-                    '+6.85%',
+                    '+${holding.profitLossPercentage}%',
                     style: AppTextStyles.regular12.copyWith(
                       color: AppColors.lightGreen,
                     ),

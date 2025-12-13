@@ -10,7 +10,7 @@ class BiometricVerifiedScreen extends StatelessWidget {
   const BiometricVerifiedScreen({super.key});
 
   void _navigateToHome(BuildContext context) {
-    context.go(AppRouter.marketScreen);
+    context.go(AppRouter.marketView);
   }
 
   @override
