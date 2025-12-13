@@ -8,6 +8,10 @@ import 'package:fintech_app/features/auth/presentation/verification/screens/biom
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fintech_app/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:fintech_app/features/auth/presentation/cubit/auth_state.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
@@ -139,23 +143,47 @@ class _RegisterFormState extends State<RegisterForm> {
             textInputAction: TextInputAction.done,
           ),
           space(height: 24.h),
-          AppElevatedButton(
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                // Navigate to fingerprint setup after successful registration
+          BlocConsumer<AuthCubit, AuthState>(
+            listener: (context, state) {
+              if (state is AuthSuccess) {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const BiometricVerifyScreen(),
                   ),
                 );
+              } else if (state is AuthFailure) {
+                Fluttertoast.showToast(
+                  msg: state.message,
+                  toastLength: Toast.LENGTH_LONG,
+                  gravity: ToastGravity.BOTTOM,
+                  backgroundColor: Colors.red,
+                  textColor: Colors.white,
+                  fontSize: 16.0,
+                );
               }
             },
-            text: 'Register',
-            textStyle: AppTextStyles.bold18.copyWith(
-              color: context.customColors.cardColor,
-            ),
-            radius: 30.r,
+            builder: (context, state) {
+              return AppElevatedButton(
+                isLoading: state is AuthLoading,
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    context.read<AuthCubit>().register(
+                      firstName: _firstNameController.text.trim(),
+                      lastName: _lastNameController.text.trim(),
+                      email: _emailController.text.trim(),
+                      password: _passwordController.text.trim(),
+                      phone: _phoneController.text.trim(),
+                    );
+                  }
+                },
+                text: 'Register',
+                textStyle: AppTextStyles.bold18.copyWith(
+                  color: context.customColors.cardColor,
+                ),
+                radius: 30.r,
+              );
+            },
           ),
         ],
       ),

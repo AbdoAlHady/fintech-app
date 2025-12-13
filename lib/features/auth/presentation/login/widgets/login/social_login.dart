@@ -6,6 +6,8 @@ import 'package:fintech_app/core/widgets/social_login_button.dart';
 import 'package:fintech_app/core/widgets/divider_with_text.dart';
 import 'package:go_router/go_router.dart';
 import 'package:fintech_app/core/routing/app_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fintech_app/features/auth/presentation/cubit/auth_cubit.dart';
 
 class SocialLogin extends StatelessWidget {
   const SocialLogin({super.key});
@@ -17,17 +19,23 @@ class SocialLogin extends StatelessWidget {
         DividerWithText(text: 'Or continue with'),
         space(height: 24.h),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SocialLoginButton(
               image: 'assets/svgs/google.svg',
               title: 'Google',
-              onTap: () {},
+              onTap: () {
+                context.read<AuthCubit>().googleSignIn();
+                // debugPrint('Google Sign-In Disabled');
+              },
             ),
             space(width: 16.w),
             SocialLoginButton(
               image: 'assets/svgs/facebook.svg',
               title: 'Facebook',
-              onTap: () {},
+              onTap: () {
+                context.read<AuthCubit>().facebookSignIn();
+              },
             ),
           ],
         ),

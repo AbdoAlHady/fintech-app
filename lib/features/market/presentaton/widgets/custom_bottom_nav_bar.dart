@@ -1,4 +1,7 @@
 import 'package:fintech_app/core/utils/exports.dart';
+import 'package:fintech_app/core/widgets/session_timeout_listener.dart';
+import 'package:fintech_app/core/routing/app_router.dart';
+import 'package:go_router/go_router.dart';
 
 class MainShellLayout extends StatefulWidget {
   final Widget child;
@@ -35,28 +38,38 @@ class _MainShellLayoutState extends State<MainShellLayout> {
       ),
     ];
 
-    return Scaffold(
-      body: widget.child,
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: selectedIndex,
-        onTap: (index) {
-          switch (index) {
-            case 0:
-              //  context.go('/news_feed');
-              break;
-            case 1:
-              //  context.go('/post');
-              break;
-            case 2:
-              //    context.go('/profile');
-              break;
-          }
-        },
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Color(0xFF1D3A70),
-        unselectedItemColor: AppColors.unSelectedIcon,
-        backgroundColor: context.customColors.cardColor,
-        items: items,
+    return SessionTimeoutListener(
+      duration: const Duration(minutes: 5), // Set session timeout to 5 minutes
+      onTimeout: () {
+        // Navigate to Biometric Verify Screen on timeout
+        context.go(AppRouter.biometricVerifyScreen);
+      },
+      child: Scaffold(
+        body: widget.child,
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: selectedIndex,
+          onTap: (index) {
+            switch (index) {
+              case 0:
+                context.go(AppRouter.marketScreen);
+                break;
+              case 1:
+                // context.go(AppRouter.portfolioScreen); // Logic placeholder
+                break;
+              case 2:
+                context.go(AppRouter.portfolioScreen);
+                break;
+              case 3:
+                context.go(AppRouter.settingsView);
+                break;
+            }
+          },
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: const Color(0xFF1D3A70),
+          unselectedItemColor: AppColors.unSelectedIcon,
+          backgroundColor: context.customColors.cardColor,
+          items: items,
+        ),
       ),
     );
   }

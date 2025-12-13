@@ -5,6 +5,9 @@ import 'package:fintech_app/features/settings/feature_imports.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/auth/presentation/login/screens/login_screen.dart';
+import '../../features/auth/presentation/register/screens/register_screen.dart';
+import '../../features/auth/presentation/forgot_password/screens/forgot_password_screen.dart';
+import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../../features/auth/presentation/verification/screens/biometric_verify_screen.dart';
 import '../../features/auth/presentation/verification/screens/biometric_verified_screen.dart';
 import '../../features/auth/presentation/verification/screens/face_id_scanning_screen.dart';
@@ -16,6 +19,9 @@ abstract class AppRouter {
   static const String settingsView = '/settingsView';
 
   static const String loginScreen = '/login';
+  static const String registerScreen = '/register';
+  static const String forgotPasswordScreen = '/forgotPassword';
+  static const String onboardingScreen = '/onboarding';
 
   // Biometric verification routes
   static const String biometricVerifyScreen = '/biometricVerify';
@@ -26,12 +32,30 @@ abstract class AppRouter {
   static const String faceIdVerifiedScreen = '/faceIdVerified';
 
   static final router = GoRouter(
-    initialLocation: loginScreen,
+    initialLocation: onboardingScreen,
     routes: <RouteBase>[
+      GoRoute(
+        path: onboardingScreen,
+        builder: (context, state) {
+          return const OnboardingScreen();
+        },
+      ),
       GoRoute(
         path: loginScreen,
         builder: (context, state) {
           return const LoginScreen();
+        },
+      ),
+      GoRoute(
+        path: registerScreen,
+        builder: (context, state) {
+          return const RegisterScreen();
+        },
+      ),
+      GoRoute(
+        path: forgotPasswordScreen,
+        builder: (context, state) {
+          return const ForgotPasswordScreen();
         },
       ),
       // Biometric (Fingerprint) routes

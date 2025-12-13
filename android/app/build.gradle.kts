@@ -48,6 +48,8 @@ flutter {
         implementation("com.google.firebase:firebase-analytics")
 
         implementation("com.google.firebase:firebase-auth")
+
+        implementation("com.facebook.android:facebook-login:latest.release")
     }
 
 }

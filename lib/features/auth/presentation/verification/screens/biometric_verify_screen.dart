@@ -61,7 +61,7 @@ class _BiometricVerifyScreenState extends State<BiometricVerifyScreen> {
 
         // If user cancelled, go back
         if (e.type == BiometricErrorType.cancelled) {
-          Navigator.of(context).pop();
+          context.go(AppRouter.loginScreen);
           return;
         }
 
@@ -123,7 +123,7 @@ class _BiometricVerifyScreenState extends State<BiometricVerifyScreen> {
           if (_errorMessage != null)
             BiometricErrorOverlay(
               errorMessage: _errorMessage!,
-              onCancel: () => Navigator.of(context).pop(),
+              onCancel: () => context.go(AppRouter.loginScreen),
               onRetry: () {
                 setState(() => _errorMessage = null);
                 _startFingerprintVerification();
