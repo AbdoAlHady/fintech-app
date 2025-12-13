@@ -39,6 +39,7 @@ class AppTextStyles {
   static TextStyle bold24 = _bold(fontSize: 24);
   static TextStyle bold26 = _bold(fontSize: 26);
   static TextStyle bold28 = _bold(fontSize: 28);
+  static TextStyle bold30 = _bold(fontSize: 30);
   static TextStyle bold32 = _bold(fontSize: 32);
 
   // Base text style with common properties

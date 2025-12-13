@@ -42,7 +42,7 @@ class CustomColors {
       lightBackground: AppColors.darkBackground,
       cardColor: AppColors.darkColor,
       secondaryCardColor: AppColors.lightDarkColor,
-      primaryColor: AppColors.lightPrimaryColor,
+      primaryColor: AppColors.white,
       textColor: AppColors.white,
       hintColor: AppColors.grey3,
     );

@@ -9,6 +9,12 @@ import 'package:fintech_app/core/utils/validators.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fintech_app/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:fintech_app/features/auth/presentation/cubit/auth_state.dart';
+import 'package:go_router/go_router.dart';
+import 'package:fintech_app/core/routing/app_router.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -70,19 +76,48 @@ class _LoginFormState extends State<LoginForm> {
                   });
                 },
               ),
-              AppTextButton(text: 'Forget Password?', onPressed: () {}),
+              AppTextButton(
+                text: 'Forget Password?',
+                onPressed: () {
+                  context.push(AppRouter.forgotPasswordScreen);
+                },
+              ),
             ],
           ),
           space(height: 24.h),
-          AppElevatedButton(
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {}
+          BlocConsumer<AuthCubit, AuthState>(
+            listener: (context, state) {
+              if (state is AuthSuccess) {
+                context.go(AppRouter.marketScreen);
+              } else if (state is AuthFailure) {
+                Fluttertoast.showToast(
+                  msg: state.message,
+                  toastLength: Toast.LENGTH_LONG,
+                  gravity: ToastGravity.BOTTOM,
+                  backgroundColor: Colors.red,
+                  textColor: Colors.white,
+                  fontSize: 16.0,
+                );
+              }
             },
-            text: 'Login',
-            textStyle: AppTextStyles.bold18.copyWith(
-              color: context.customColors.cardColor,
-            ),
-            radius: 30.r,
+            builder: (context, state) {
+              return AppElevatedButton(
+                isLoading: state is AuthLoading,
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    context.read<AuthCubit>().login(
+                      email: _emailController.text.trim(),
+                      password: _passwordController.text.trim(),
+                    );
+                  }
+                },
+                text: 'Login',
+                textStyle: AppTextStyles.bold18.copyWith(
+                  color: context.customColors.cardColor,
+                ),
+                radius: 30.r,
+              );
+            },
           ),
         ],
       ),

@@ -1,5 +1,6 @@
 package com.example.fintech_app
 
-import io.flutter.embedding.android.FlutterFragmentActivity;
+import io.flutter.embedding.android.FlutterFragmentActivity
 
-class MainActivity : FlutterFragmentActivity ()
+class MainActivity: FlutterFragmentActivity() {
+}
