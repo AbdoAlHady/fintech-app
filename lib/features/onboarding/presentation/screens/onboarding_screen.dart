@@ -1,5 +1,6 @@
 import 'package:fintech_app/core/helpers/extensions.dart';
 import 'package:fintech_app/core/theme/app_text_styles.dart';
+import 'package:fintech_app/core/utils/app_assets.dart';
 import 'package:fintech_app/features/onboarding/data/models/onboarding_model.dart';
 import 'package:fintech_app/features/onboarding/presentation/widgets/onboarding_last_page_buttons.dart';
 import 'package:fintech_app/features/onboarding/presentation/widgets/onboarding_navigation.dart';
@@ -20,19 +21,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final List<OnboardingModel> _pages = [
     OnboardingModel(
-      image: 'assets/onboarding/onboarding1.png',
+      image: AppAssets.imagesOnboarding1,
       title: 'Welcome To Crypto X',
     ),
     OnboardingModel(
-      image: 'assets/onboarding/onboarding2.png',
+      image: AppAssets.imagesOnboarding2,
       title: 'Transaction Security',
     ),
     OnboardingModel(
-      image: 'assets/onboarding/onboarding3.png',
+      image: AppAssets.imagesOnboarding3,
       title: 'Fast And Reliable Market Updated',
     ),
     OnboardingModel(
-      image: 'assets/onboarding/onboarding4.png',
+      image: AppAssets.imagesOnboarding4,
       title: 'Get Started Now!',
     ),
   ];

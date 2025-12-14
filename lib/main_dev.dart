@@ -22,3 +22,6 @@ void main() async {
   await CacheHelper().init();
   runApp(const FintechApp());
 }
+
+// flutter run --flavor dev -t lib/main_dev.dart
+// flutter run --flavor prod -t lib/main_prod.dart
