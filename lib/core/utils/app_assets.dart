@@ -2,11 +2,29 @@
 class AppAssets {
   AppAssets._();
   
+  static const String androidAppIconBackground = "assets/android/app_icon_background.png";
+
+  static const String flavorsDevAppIcon = "assets/flavors/dev/app_icon.png";
+
+  static const String flavorsDevAppIconForeground = "assets/flavors/dev/app_icon_foreground.png";
+
+  static const String flavorsProdAppIcon = "assets/flavors/prod/app_icon.png";
+
+  static const String flavorsProdAppIconForeground = "assets/flavors/prod/app_icon_foreground.png";
+
   static const String imagesApplePay = "assets/images/apple_pay.png";
 
   static const String imagesAvatar = "assets/images/avatar.jpg";
 
   static const String imagesMasterCard = "assets/images/master_card.png";
+
+  static const String imagesOnboarding1 = "assets/images/onboarding1.png";
+
+  static const String imagesOnboarding2 = "assets/images/onboarding2.png";
+
+  static const String imagesOnboarding3 = "assets/images/onboarding3.png";
+
+  static const String imagesOnboarding4 = "assets/images/onboarding4.png";
 
   static const String imagesVisa = "assets/images/visa.png";
 
@@ -25,6 +43,8 @@ class AppAssets {
   static const String svgsCard = "assets/svgs/card.svg";
 
   static const String svgsEthereum = "assets/svgs/ethereum.svg";
+
+  static const String svgsGirlBackground = "assets/svgs/girl_background.jpg";
 
   static const String svgsLitecoin = "assets/svgs/litecoin.svg";
 

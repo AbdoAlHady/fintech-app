@@ -7,17 +7,26 @@ class AppTextStyles {
   static TextStyle regular12 = _regular(fontSize: 12);
   static TextStyle regular14 = _regular(fontSize: 14);
   static TextStyle regular16 = _regular(fontSize: 16);
+  static TextStyle regular18 = _regular(fontSize: 18);
   static TextStyle regular28 = _regular(fontSize: 28);
   // Medium
   static TextStyle medium10 = _medium(fontSize: 10);
   static TextStyle medium12 = _medium(fontSize: 12);
   static TextStyle medium14 = _medium(fontSize: 14);
+  static TextStyle medium16 = _medium(fontSize: 16);
+  static TextStyle medium18 = _medium(fontSize: 18);
   static TextStyle medium20 = _medium(fontSize: 20);
+  static TextStyle medium24 = _medium(fontSize: 24);
   // semiBold
   static TextStyle semiBold10 = _semiBold(fontSize: 10);
+  static TextStyle semiBold12 = _semiBold(fontSize: 12);
   static TextStyle semiBold14 = _semiBold(fontSize: 14);
   static TextStyle semiBold16 = _semiBold(fontSize: 16);
   static TextStyle semiBold18 = _semiBold(fontSize: 18);
+  static TextStyle semiBold20 = _semiBold(fontSize: 20);
+  static TextStyle semiBold24 = _semiBold(fontSize: 24);
+  static TextStyle semiBold26 = _semiBold(fontSize: 26);
+  static TextStyle semiBold28 = _semiBold(fontSize: 28);
   // Bold
   static TextStyle bold10 = _bold(fontSize: 10);
   static TextStyle bold12 = _bold(fontSize: 12);
@@ -30,6 +39,7 @@ class AppTextStyles {
   static TextStyle bold24 = _bold(fontSize: 24);
   static TextStyle bold26 = _bold(fontSize: 26);
   static TextStyle bold28 = _bold(fontSize: 28);
+  static TextStyle bold30 = _bold(fontSize: 30);
   static TextStyle bold32 = _bold(fontSize: 32);
 
   // Base text style with common properties
