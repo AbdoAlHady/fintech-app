@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../data/auth_repository.dart';
 import 'auth_state.dart';
@@ -25,6 +27,7 @@ class AuthCubit extends Cubit<AuthState> {
         password: password,
         phone: phone,
       );
+      log('User registered: ${user.email}');
       emit(AuthSuccess(user));
     } catch (e) {
       emit(AuthFailure(e.toString()));

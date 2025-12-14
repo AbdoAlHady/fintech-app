@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fintech_app/core/helpers/spacing.dart';
 import 'package:fintech_app/core/helpers/extensions.dart';
 import 'package:fintech_app/core/theme/app_text_styles.dart';
@@ -146,6 +148,7 @@ class _RegisterFormState extends State<RegisterForm> {
           BlocConsumer<AuthCubit, AuthState>(
             listener: (context, state) {
               if (state is AuthSuccess) {
+                log('Registration successful for user: ${state.user.email}');
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -153,6 +156,7 @@ class _RegisterFormState extends State<RegisterForm> {
                   ),
                 );
               } else if (state is AuthFailure) {
+                log('Registration failed: ${state.message}');
                 Fluttertoast.showToast(
                   msg: state.message,
                   toastLength: Toast.LENGTH_LONG,

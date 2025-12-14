@@ -44,7 +44,15 @@ class AppAssets {
 
   static const String svgsEthereum = "assets/svgs/ethereum.svg";
 
+  static const String svgsFaceID = "assets/svgs/Face_ID.svg";
+
+  static const String svgsFacebook = "assets/svgs/facebook.svg";
+
+  static const String svgsFingerPrint = "assets/svgs/finger_print.svg";
+
   static const String svgsGirlBackground = "assets/svgs/girl_background.jpg";
+
+  static const String svgsGoogle = "assets/svgs/google.svg";
 
   static const String svgsLitecoin = "assets/svgs/litecoin.svg";
 
